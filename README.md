@@ -158,6 +158,18 @@ npm run deploy
 - **GraphQL API**: Uses latest Shopify Admin API
 - **Session Management**: Secure authentication with Prisma
 - **Webhook Support**: Handles app lifecycle events
+- **India-Specific Setup**: Getting Started guide with plan requirements and eligibility checks
+- **Carrier Service Integration**: Live shipping rates at checkout
+- **Order Sync**: Automatic order synchronization with Scan2Ship
+- **Fulfillment Write-back**: Label and tracking information sync
+
+## 📱 Available Admin Pages
+
+1. **Dashboard** (`/app`) - Key stats and analytics
+2. **Getting Started** (`/app/getting-started`) - India-specific setup guide with plan requirements and eligibility
+3. **Carriers & Pickup** (`/app/carriers`) - Manage courier services and pickup locations
+4. **Rates Sandbox** (`/app/rates-sandbox`) - Test shipping rate calculations
+5. **Webhooks & Health** (`/app/webhooks-health`) - Monitor webhook deliveries and system health
 
 ## 🔍 Development Tips
 

@@ -2,19 +2,22 @@
 
 client_id = "5190e680f3ffd57d4fa8664f07e7dc83"
 name = "scan2ship"
-application_url = "https://example.com"
+application_url = "https://statements-resolutions-hour-download.trycloudflare.com"
 embedded = true
 
 [build]
 automatically_update_urls_on_dev = true
-include_config_on_deploy = true
 
 [webhooks]
-api_version = "2025-07"
+api_version = "2025-10"
 
   [[webhooks.subscriptions]]
   topics = [ "app/uninstalled" ]
   uri = "/webhooks/app/uninstalled"
+
+  [[webhooks.subscriptions]]
+  topics = [ "fulfillments/update" ]
+  uri = "/webhooks/fulfillments/update"
 
   [[webhooks.subscriptions]]
   topics = [ "app/scopes_update" ]
@@ -24,18 +27,9 @@ api_version = "2025-07"
   topics = [ "orders/create" ]
   uri = "/webhooks/orders/create"
 
-  [[webhooks.subscriptions]]
-  topics = [ "fulfillments/update" ]
-  uri = "/webhooks/fulfillments/update"
-
 [access_scopes]
-# Scopes for shipping aggregator functionality
-# read_orders: Required for ORDERS_CREATE webhook
-# write_shipping: To register Carrier Service via GraphQL
-# read_fulfillments, write_fulfillments: For fulfillment sync
-# write_third_party_fulfillment_orders: For fulfillment flow
-# read_locations: For location-based shipping
-scopes = "read_orders,write_shipping,read_fulfillments,write_fulfillments,write_third_party_fulfillment_orders,read_locations"
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "read_fulfillments,read_locations,read_orders,write_fulfillments,write_shipping,write_third_party_fulfillment_orders"
 
 [auth]
-redirect_urls = [ "https://example.com/api/auth" ]
+redirect_urls = [ "https://statements-resolutions-hour-download.trycloudflare.com/api/auth" ]
